@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var num = window.prompt("请输入你的年龄")
+    num1 = num *1;
+    if(num1 == 0){
+    num1 = parseInt(num)
+    }
+    if(isNaN(num1)){
+        alert('你输入的年龄无效')
+}else{
+        if(num1<=14){
+            alert("你是儿童")
+        }else{
+            if(num1<=24 && num1>14) {
+                alert("你是青少年")
+            }else{
+                if(num1>24 && num1<40){
+                    alert("你是成年人")
+                }else{
+                    if(num1>=40 && num1<60){
+                        alert("你是中年人")
+                    }else{
+                        if(num1>=60){
+                            alert("你是老年人")
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+</script>
+
+</body>
+</html>
