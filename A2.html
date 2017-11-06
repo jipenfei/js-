@@ -493,7 +493,103 @@
 //        }
 //    }
 //    var n = window.prompt("请输入n值");
-//    star(n);
+//    star(n
+//    function Fibonacci(n) {
+//        if(n==1||n==2){
+//            return 1;
+//        }else{
+//            return Fibonacci(n-1)+Fibonacci(n-2)
+//        }
+//    }
+//    var n = window.prompt("请输入要求前几项和")
+//   document.write( Fibonacci(n))
+//    var n ,i,sum=0;
+//    var n = window.prompt("请输入要求的n值");
+//    for(i=1;i<=n;i++){
+//        j=(Math.pow((-1),(i-1)))/(2*i-1);
+//        sum=sum+j;
+//    }
+//    document.write("前"+n+"项的pi值为"+4*sum);
+//    function pi(n) {
+//        var sum=0,n;
+//        var sign=1;
+//        sum+=sign/(2*n-1);
+//        sign*=-1;
+//        document.write(sum*4)
+//
+//    }
+//    var n =window.prompt("请输入n值")
+//    pi(n);
+//    var win_rate=0;		//赢率
+//    var play_times=0;	//总次数
+//    var wins=0;			//赢的次数
+//    var last_digits;	//上次数字串
+//    var last_win;	//上次是否赢?
+//
+//        function PlayOnce()
+//        {//模拟玩一次数字机游戏
+//            var i,digit;
+//            play_times++;
+//            last_digits="";
+//            last_win=false;
+//            for(i=0;i<3;i++)
+//            {
+//                digit = Math.floor(Math.random()*9)+1;
+//                last_digits += digit;
+//                if (digit==8) last_win=true;
+//            }
+//            if (last_win) wins++;
+//            win_rate = Math.floor(100*(wins/play_times));
+//        }
+//    while(true)
+//    {
+//        PlayOnce();
+//        if (!confirm(last_digits +"\n" + (last_win?"赢":"输") + "\n胜率"+win_rate+"%,继续吗?")) break;
+//    }
+//    var time=0,win_time=0, position,win_date=0,sep;
+//    function aa() {
+//        var sdate;
+//        time++;
+//        position=false;
+//        sep="";
+//        for(var i = 1;i<=3;i++){
+//            sdate = Math.floor(Math.random()*9)+1;
+//            sep +=sdate;
+//            if(sdate == 8) position=true;
+//        }
+//        if(position)win_time++;
+//        win_date=Math.floor((win_time/time)*100);
+//    }
+//    while (true){
+//            aa();
+//            if(!confirm(+sep+"\n"+(position?"yin":"shu")+"胜率："+win_date+"%是否继续"))
+//                break;
+//    }
+
+
+
+    //    var a,b,c,count=0,time=0;
+//    function edge() {
+//        count++;
+//        a = Math.floor(Math.random()*9)+1;
+//        b = Math.floor(Math.random()*9)+1;
+//        c = Math.floor(Math.random()*9)+1;
+//       if(a==8||b==8||c||8){
+//           time++;
+//           a=(time/count)*100;
+//       }
+//       else {
+//           console.log("lose")
+//       }
+//
+//    }
+//while (true){
+//        edge();
+//        if(!confirm(a+"%"))
+//            break;
+
+
+
 
 
 </script>
