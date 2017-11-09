@@ -144,9 +144,49 @@
 //    avge=sum/count;
 //
 //    document.write("总分为"+sum+"平均分为"+avge+"不及格科目有"+a+"科")
-var
+//    var arr = new  Array(40),i,count=0;
+//    for(i=0;i<arr.length;i++){
+//        if(i<=1)arr[i]=1;
+//        if(i>1)arr[i]=arr[i-1]+arr[i-2];
+//    }
+//    document.write("<br/>")
+//    for(var j=i-1,k=0;k<=j;j--){
+//        document.write("&nbsp")
+//        document.write(arr[j]);
+//        count++;
+//        if (count%6==0){
+//            document.write("<br/>")
+//        }
+//    }
+    function aa(x) {
+        return (((x%4==0 && x%100!=0)||(x%400==0))
+    }
+    function DayOfYear(y) {
+        var arr = new Array(31,28,31,30,31,30,31,31,30,31,30,31),sum=0,i;
+        if(aa(y.getFullYear()))arr[2]=29;
+        for(i=0;i<y.getMonth();i++)sum=sum+arr[i];
+        sum+=y.getDate();
+        return sum;
+    }
+   var today = new Date();
+    alert("今天是"+today.toLocaleDateString()+"总共有"+DayOfYear(today))
+//function DayOfYear(d)
+//{//求某日期d在所有年份的第几天
+//    var months=new Array(31,28,31,30,31,30,31,31,30,31,30,31),days,i;
+//    if(IsLeapYear(d.getFullYear())) months[2]=29;
+//    days=0;
+//    for(i=d.getMonth()-1;i>=0;i--) days += months[i];
+//    days += d.getDate();
+//    return days;
+//}
+//
+//var today=new Date();
+//alert("今天("+today.toLocaleDateString()+")是本年度的第"+DayOfYear(today)+"天");
+//
+//
 
 </script>
+
 
 </body>
 </html>
