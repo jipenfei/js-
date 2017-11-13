@@ -41,6 +41,19 @@
         <!--}-->
     <!--},100);-->
 <!--</script>-->
+function getEleByClass(clsName) {
+var result = [];
+var allEle = document.getElementsByTagName("aa");
+for(var i =0;i<=allEle.length;i++){
+if(allEle[i].className==clsName){
+result.push(allEle[i]);
+}
+}
+return result;
+}
+var aA = getEleByClass('aa');
+for(var j=0;j<aA.length;j++){
+aA[j].style.background='red';
 
 </body>
 </html>
