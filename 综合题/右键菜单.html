@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    li{
+        list-style: none;
+    }
+    *{
+      padding:0;
+        margin: 0;
+    }
+    #right{
+        width: 80px;
+        margin: 5px 5px;
+        border: 1px solid #ccc;
+        font-size: 12px;
+        padding: 5px 0px;
+        display: none;
+        position: absolute;
+    }
+
+    #right li{
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+    }
+    #right li:hover{
+        background: red;
+    }
+
+</style>
+<div id="right">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</div>
+<script>
+
+    var oYL = document.getElementById("right");
+    document.oncontextmenu = function (e) {
+        e = e||window.event;
+        oYL.style.display = "block";
+        oYL.style.left=e.clientX+"px";
+        oYL.style.top=e.clientY+"px";
+        return false;
+    }
+    document
+</script>
+</body>
+</html>
