@@ -40,16 +40,23 @@
     <li>4</li>
 </div>
 <script>
-
-    var oYL = document.getElementById("right");
+    var oUl = document.getElementById("right");
+    var oLi = oUl.getElementsByTagName("li");
     document.oncontextmenu = function (e) {
-        e = e||window.event;
-        oYL.style.display = "block";
-        oYL.style.left=e.clientX+"px";
-        oYL.style.top=e.clientY+"px";
+        e= e||window.event;
+        oUl.style.display="block";
+        oUl.style.left = e.clientX+"px";
+        oUl.style.top= e.clientY+"px";
         return false;
     }
-    document.donment
+    document.onclick = function () {
+        oUl.style.display = "none";
+    }
+    for(var i=0;i<oLi.length;i++ ){
+        oLi[i].onclick=function () {
+            console.log(this.innerHTML)
+        }
+    }
 </script>
 </body>
 </html>
