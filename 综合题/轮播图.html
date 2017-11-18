@@ -26,7 +26,7 @@
     #center img{
         width: 680px;
         height: 344px;
-
+        display: none;
     }
     #chance{
        position: absolute;
@@ -41,11 +41,11 @@
         border: 2px solid wheat;
         margin-right: 10px;
         border-radius: 50%;
-
     }
-    #chance li:hover{
+    .one{
         background: black;
     }
+
     #cation span{
         display: inherit;
         height: 20px;
@@ -67,18 +67,22 @@
    .right{
        left: 20px;
    }
+    #center .select{
+        display: block;
+    }
+
 
 </style>
 <div id="cation">
 <div id="center">
     <img class="select" src="img/11.jpg" alt="">
-    <img src="img/11.jpg" alt="">
+    <img src="img/1.jpg" alt="">
     <img src="img/11.jpg" alt="">
     <img src="img/11.jpg" alt="">
 </div>
     <div>
         <ul id="chance">
-            <li></li>
+            <li class="one"></li>
             <li></li>
             <li></li>
             <li></li>
@@ -89,6 +93,25 @@
 
 
 </div>
+<script>
+    var oUl = document.getElementById("chance");
+    var oLi = document.getElementsByTagName("li");
+    var oDiv = document.getElementById("center");
+    var oImg = oDiv.getElementsByTagName("img");
+    console.log(oLi);
+    for(var i =0;i<oLi.length;i++){
+        oLi[i].index = i;
+        oLi[i].onclick = function () {
+            for(var j =0;j<oLi.length;j++){
+                oLi[j].className = " ";
+                oImg[j].className = " ";
+            }
+            this.className = "one";
+            oImg[this.index].className = "select";
+        }
+    }
+
+</script>
 
 </body>
 </html>

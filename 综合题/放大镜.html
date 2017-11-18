@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #small-box{
+            width: 400px;
+            height: 400px;
+            position: relative;
+        }
+        #drag{
+            width: 200px;
+            height: 200px;
+            background: grey;
+            opacity: 0.6;
+            position: absolute;
+            left: 0;
+            top:0;
+            display: none;
+        }
+        #big-box{
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            position: absolute;
+            left: 400px;
+            top:0;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<div id = "small-box">
+    <img src="img/1.jpg" alt="">
+    <div id = "drag"></div>
+</div>
+<div id = "big-box">
+    <img src="img/2.jpg" id ="big-img" alt="">
+</div>
+<script>
+   var oDiv = document.getElementById("small-box");
+   var oDrag = document.getElementById("drag");
+   var oBig = document.getElementById("big-box");
+   var oImg = document.getElementById("big-img");
+   console.log(oImg);
+   oDiv.onmouseover = function () {
+       oDrag.style.display = "block";
+       oBig.style.display = "block";
+   }
+   oDiv.onmouseout = function () {
+       oDrag.style.display = "none";
+       oBig.style.display = "none";
+   }
+   oDiv.onmousemove = function (e) {
+       e =e ||e.window;
+       var aLeft =e.clientX - oDrag.offsetWidth/2;
+       var aTop = e.clientY - oDrag.offsetHeight/2;
+       var xMax = oDiv.offsetWidth -oDrag.offsetWidth;
+       if(aTop<0){
+           aTop = 0;
+       }
+       if(aTop>xMax){
+           aTop = xMax;
+       }
+       if(aLeft<0){
+           aLeft = 0;
+       }
+       if(aLeft>xMax){
+           aLeft = xMax;
+       }
+       oDrag.style.left = aLeft +"px";
+       oDrag.style.top = aTop +"px";
+       oImg.style.left = -aLeft*2+"px";
+       oImg.style.top = -aTop*2+"px";
+   }
+
+
+
+</script>
+
+</body>
+</html>
