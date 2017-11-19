@@ -37,7 +37,7 @@
     #chance li{
         width: 10px;
         height: 10px;
-        float: right;
+        float: left;
         border: 2px solid wheat;
         margin-right: 10px;
         border-radius: 50%;
@@ -52,7 +52,7 @@
         line-height: 20px;
     }
 
-    .left,.right{
+    #left,#right{
         position: absolute;
         bottom: 20px;
         border: 1px solid black;
@@ -61,10 +61,10 @@
         line-height: 22px;
     }
 
-   .left{
+   #left{
        left: 50px;
    }
-   .right{
+   #right{
        left: 20px;
    }
     #center .select{
@@ -78,7 +78,7 @@
     <img class="select" src="img/11.jpg" alt="">
     <img src="img/1.jpg" alt="">
     <img src="img/11.jpg" alt="">
-    <img src="img/11.jpg" alt="">
+    <img src="img/1.jpg" alt="">
 </div>
     <div>
         <ul id="chance">
@@ -88,28 +88,86 @@
             <li></li>
         </ul>
     </div>
-        <i class="iconfont icon-fanhui right"></i>
-        <i class="iconfont icon-gengduo left"></i>
+        <i class="iconfont icon-fanhui "
+        id="right"></i>
+        <i class="iconfont icon-gengduo "id="left"></i>
 
 
 </div>
 <script>
+    var oCation = document.getElementById("cation")
     var oUl = document.getElementById("chance");
     var oLi = document.getElementsByTagName("li");
     var oDiv = document.getElementById("center");
     var oImg = oDiv.getElementsByTagName("img");
-    console.log(oLi);
-    for(var i =0;i<oLi.length;i++){
-        oLi[i].index = i;
-        oLi[i].onclick = function () {
-            for(var j =0;j<oLi.length;j++){
-                oLi[j].className = " ";
-                oImg[j].className = " ";
-            }
-            this.className = "one";
-            oImg[this.index].className = "select";
-        }
+    var oBtn = document.getElementById("left");
+    var oAtn = document.getElementById("right");
+    var oNow = 0;
+    var j;
+    for(var i=0;i<oLi.length;i++){
+       oLi[i].index = i;
+       oLi[i].onmouseover=function () {
+                          oNow = this.index;
+                          j = this.index;
+                        changeImg(this.index);
+       }
     }
+   oBtn.onclick = function() {
+        oNow++;
+        if(oNow>=oLi.length){
+            oNow=0;
+        }
+        changeImg(oNow);
+   }
+   oAtn.onclick = function () {
+
+
+       if(j<=0){
+           oNow=0;
+       }
+       oNow++;
+       j=oLi.length-oNow;
+       console.log(oNow)
+       changeImg(j);
+   }
+
+    function  changeImg(idex) {
+        for(var j=0;j<oLi.length;j++){
+            oLi[j].className=" ";
+            oImg[j].className="";
+        }
+        oLi[idex].className = "one";
+        oImg[idex].className = "select"
+    }
+    oCation.onmouseover = function () {
+        clearInterval(time)
+    }
+    oCation.onmouseout = function () {
+        aa();
+    }
+
+   function aa() {
+       time = setInterval(function () {
+           oBtn.onclick();
+       },1000)
+   }
+//    for(var i =0;i<oLi.length;i++){
+//        oLi[i].index = i;
+//        oLi[i].onclick = function () {
+//         aa();
+//            this.className = "one";
+//            oImg[this.index].className = "select";
+//        }
+//    }
+//    oBtn.onclick = function() {
+//        oNow++;
+//      aa();
+//        if(oNow>=oLi.length){
+//            oNow=0;
+//        }
+//        oImg[oNow].className = 'select';
+//        oLi[oNow].className ="one";
+//    }
 
 </script>
 
