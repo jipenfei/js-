@@ -72,25 +72,29 @@
 
 </div>
 <script>
-    var oLi = document.getElementsByTagName("li");
-      console.log(oLi);
-      var  oBtn = document.getElementById("bloss");
-      var  oBiv = oBtn.getElementsByTagName("div");
-      console.log(oBiv);
-    for(var i = 0;i<oLi.length;i++){
-         oLi[i].index = i;
-        oLi[i].onclick = function() {
-
-            for(var j=0;j<oLi.length;j++){
-                oLi[j].className = " ";
-                oBiv[j].className = ' ';
-            }
-            this.className = "colo";
-            oBiv[this.index].className = 'sss';
-
-//            console.log(aLI[I])
-        }
-    }
+    $("#one-b li").on("click",function () {
+        $(this).addClass("colo").siblings().removeClass("colo");
+        $("#bloss div").eq($(this).index).addClass("sss").sibling().removeClass("sss")
+    })
+//    var oLi = document.getElementsByTagName("li");
+//      console.log(oLi);
+//      var  oBtn = document.getElementById("bloss");
+//      var  oBiv = oBtn.getElementsByTagName("div");
+//      console.log(oBiv);
+//    for(var i = 0;i<oLi.length;i++){
+//         oLi[i].index = i;
+//        oLi[i].onclick = function() {
+//
+//            for(var j=0;j<oLi.length;j++){
+//                oLi[j].className = " ";
+//                oBiv[j].className = ' ';
+//            }
+//            this.className = "colo";
+//            oBiv[this.index].className = 'sss';
+//
+////            console.log(aLI[I])
+//        }
+//    }
 </script>
 
 </body>

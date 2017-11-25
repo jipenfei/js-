@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    $("clockNo").on("click",function () {
+        $(":checkbox").prop("check",true);
+    });
+    $("colckYes").on("click",function () {
+        $(":checkbox").prop("check",true)
+    });
+    $("black").on("click",function () {
+        var str =  "你所选中的是\n";
+        $(':checked').each(function () {
+            str += this.value+"\n";
+        })
+        alert(str);
+    })
+    $("#checkRW").on("click",function () {
+        $(":checked").each(function () {
+            this.checked = !this.checked;
+        })
+
+    })
+</script>
+
+</body>
+</html>
