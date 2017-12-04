@@ -13,6 +13,7 @@
     ul{
         width: 520px;
         list-style: none;
+        position: absolute;
 
     }
     #arrow{
@@ -65,7 +66,45 @@
 </div>
 </div>
 <script>
-    var
+    var OUl = document.getElementsByTagName("ul")[0];
+    var OLI = document.getElementsByTagName("li");
+    var Arrow = document.getElementById("arrow");
+    var SPAN = Arrow.getElementsByTagName("span");
+    var time;
+    OUl.innerHTML+= OUl.innerHTML;
+    OUl.style.width = (OLI[0].offsetWidth+10)*8+"px";
+    for(var i =0;i<SPAN.length;i++){
+        SPAN[i].index = i;
+        SPAN[i].onclick = function () {
+            clearInterval(time);
+            if(this.index==0){
+                aa()
+            }
+            if(this.index==1){
+                bb()
+            }
+        }
+    }
+    function bb() {
+       time = setInterval(function () {
+            OUl.style.left = OUl.offsetLeft -2 +"px";
+            if(OUl.offsetLeft <= -OUl.offsetWidth/2){
+                OUl.style.left= 0 +"px";
+            }
+        },30)
+    }
+
+    function aa(){
+       time= setInterval(function () {
+        OUl.style.left = OUl.offsetLeft + 2+"px";
+
+        if(OUl.offsetLeft>=0){
+            console.log(OUl.offsetLeft);
+            OUl.style.left=-OUl.offsetWidth/2+"px";
+        }
+    },30)}
+
+
 </script>
 </body>
 </html>
