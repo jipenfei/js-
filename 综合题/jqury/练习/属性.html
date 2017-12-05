@@ -4,8 +4,64 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<style>
+    .selected{
+        width: 200px;
+        height: 200px;
+        background: #000000;
+        position: absolute;
+    }
+    #div2{
+        width: 400px;
+        height: 400px;
+        background: red;
+        position: relative;
+    }
+</style>
 <body>
-<div>
+<div id="div2">
+    <div id="div1" >
+        aaa
+    </div>
 </div>
+
+<input type = "checkbox"  name="item" value="足球">足球
+<input type = "checkbox"  name="item" value="足球">篮球
+<input type = "checkbox"  name="item" value="足球">羽毛球
+<input type = "checkbox"  name="item" value="足球">乒乓球
+<br/>
+<input type="button"  id="checkedall" value="全选">
+<input type="button"  id="checkedno" value="全不选">
+<input type="button"  id="checkedrev" value="反选">
+<input type="button"  id="send" value="提交">
+<button id = "sss" >ssss</button>
+<script src="../jquery-1.12.4.js"></script>
+
+<script>
+//   $("#checkedall").on("click",function(){
+//       $("[type='checkbox']").prop("checked",true);
+//   })
+//   $("#checkedno").on("click",function(){
+//      $("[type='checkbox']").prop("checked",false);
+//   })
+//
+//    $("#checkedrev").on("click",function () {
+//        $(":checkbox").each(function (index,elem) {
+//           elem.checked = !elem.checked
+//        })
+//    })
+
+      $("#div1").addClass("selected")
+
+$("#sss").on("click",function () {
+    $("#div1").toggleClass("selected")
+})
+console.log($("#div1").offset({
+    left:20
+})
+console.log($("#div1").position().left)
+
+
+</script>
 </body>
 </html>
