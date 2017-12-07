@@ -22,7 +22,7 @@ function run() {
 
         }
         $("#jnBtn a").eq(prevIdx).triggerHandler("mouseover");
-        console.log(prevIdx)
+
     },1000);
 }
 
@@ -32,3 +32,14 @@ $("#jnImageroll").on("mouseover",function () {
     run()
 })
 // $("#JS_imgWrap a").eq(0).trigger("mouseover")
+// 失去焦点
+var $val;
+$(":input").on("focus",function () {
+    if(this.value == this.defaultValue){
+        this.value= "";
+    }
+}).on("blur",function () {
+    if(this.value ==""){
+        this.value = this.defaultValue
+    }
+})
