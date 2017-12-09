@@ -33,13 +33,25 @@ $("#jnImageroll").on("mouseover",function () {
 })
 // $("#JS_imgWrap a").eq(0).trigger("mouseover")
 // 失去焦点
-var $val;
 $(":input").on("focus",function () {
     if(this.value == this.defaultValue){
-        this.value= "";
+        this.value="";
     }
 }).on("blur",function () {
     if(this.value ==""){
         this.value = this.defaultValue
+    }
+})
+$("#jnBrandTab li").on("mouseover",function () {
+    var $this = $(this).index();
+    if($this == 0){
+        $("#jnBrandList").offset({
+            left:0;
+        })
+    }
+    if ($this == 1){
+        $("#jnBrandList").offset({
+            left:416;
+        })
     }
 })
