@@ -42,16 +42,7 @@ $(":input").on("focus",function () {
         this.value = this.defaultValue
     }
 })
-$("#jnBrandTab li").on("mouseover",function () {
+$("#jnBrandTab li").on(" mouseover",function () {
     var $this = $(this).index();
-    if($this == 0){
-        $("#jnBrandList").offset({
-            left:0;
-        })
-    }
-    if ($this == 1){
-        $("#jnBrandList").offset({
-            left:416;
-        })
-    }
-})
+        $("#jnBrandList").animate
+            
