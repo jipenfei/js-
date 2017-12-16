@@ -43,6 +43,6 @@ $(":input").on("focus",function () {
     }
 })
 $("#jnBrandTab li").on(" mouseover", function () {
-    var $this = $(this).index();
+    var $this =  $(this).index();
         $("#jnBrandList").animate
             
