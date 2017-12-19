@@ -8,6 +8,18 @@ $(".color_change img").on("click",function(){
   var i = $src.indexOf(".");
   var $path = $src.substring(0,i);
   var $finally =$src.substring(i);
-  $("#bigImg").attr("src",$path+"_one_small"+$finally)
 
+  $("#bigImg").attr("src",$path+"_one_small"+$finally);
+    var $color = $path.replace('images/pro_img/','');
+    $(".imgList li").addClass("hide");
+    $(".imgList_"+$color).removeClass("hide")
+    //'images/pro_img/green'  == >greenconsole.log(1)
+})
+// 放大镜
+$(".imgList img").on("click",function() {
+  var $src = $(this).attr("src");
+  var i = $src.indexOf(".");
+  var $path = $src.substring(0,i);
+  var $finally = $src.substring(i);
+  $("#bigImg").attr("src",$path+"_small"+$finally);
 })
