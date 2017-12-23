@@ -7,8 +7,12 @@ requirejs.config({
         jquery: 'jquery-1.12.4'
     }
 });
-require(['jquery','dilog'],function($,dilog){
+require(['jquery','dilog1'],function($,dilog){
     $("#btn").on("click",function(){
-      dilog.open()
+      dilog.open({
+          width:800,
+          title:"bbb",
+          content:"ssss"
+      })
        })
 })
