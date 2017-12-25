@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li[class~="aa"]{
+            background: red;
+        }
+        li:no(.aa){
+            background: blue;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    id选择器                           伪类：为对象：：first-letter选中第一个字 first-line选中第一行
+    class选择器
+   p标签选择器
+   .aa .bb后代选择器
+    .aa>.bb子代选择器
+   .a,.b
+    att-=bb只有bb 或者bb-有用
+    attr*=bb 含有bb就行
+    attr^=bb以bb开头的
+    attr^=bb以bb结尾的
+   :hover伪类选择器
+   .aa+.bb选中后面紧跟的兄弟bb
+    visited被访问后链接的颜色
+    no(s)除了s之外
+    <ul>
+        <li>014</li>
+        <li class="aa">024</li>
+        <li class="aa bb">034</li>
+        <li class="cc aa bb">044</li>
+    </ul>
+    <ul id="2">
+        <li>{14}</li>
+        <li>{24}</li>
+        <li>{34}</li>
+        <li>{44}</li>
+    </ul>
+</body>
+</html>
