@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #000000;
+        }
+        #ss{
+            background: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<!--<canvar id="write" width="500" height="500"></canvar>-->
+<canvas id="ss" width="500" height="500"></canvas>
+<script>
+    var oWit = document.querySelector("#ss");
+    var oCli = oWit.getContext("2d");
+
+
+
+        oWit.onclick = function (e) {
+            oCli.beginPath()
+            oCli.arc(e.clientX, e.clientY, 80, 0, Math.PI * 2);
+            oCli.stroke()
+            oCli.closePath()
+
+            oCli.beginPath()
+            for (var i = 0; i < 60; i++) {
+                oCli.moveTo(e.clientX, e.clientY);
+                oCli.arc(e.clientX, e.clientY, 80, i * Math.PI * 2 / 60, Math.PI * 2 / 180);
+            }
+            oCli.stroke()
+            oCli.closePath()
+
+
+            oCli.beginPath()
+            oCli.arc(e.clientX, e.clientY, 75, 0, Math.PI * 2);
+            oCli.fillStyle = "white";
+            oCli.fill();
+            oCli.closePath()
+
+            oCli.beginPath()
+            for (var i = 0; i < 60; i++) {
+                oCli.moveTo(e.clientX, e.clientY);
+                oCli.arc(e.clientX, e.clientY, 80, i * Math.PI * 2 / 12, Math.PI * 2 / 180);
+            }
+            oCli.stroke()
+            oCli.closePath()
+
+            oCli.beginPath()
+            oCli.arc(e.clientX, e.clientY, 70, 0, Math.PI * 2);
+            oCli.fillStyle = "white";
+            oCli.fill();
+            oCli.closePath();
+
+            var date = new Date();
+            var iSencond = date.getSeconds();
+            var iMinute = date.getMinutes() + iSencond / 60;
+            var iHouse = date.getHours() + iMinute / 60;
+//        fen针
+            run()
+
+            function run() {
+                oCli.beginPath()
+                oCli.moveTo(e.clientX, e.clientY);
+                oCli.arc(e.clientX, e.clientY, 65, -(iSencond * 6)-90, -((iSencond * 6) - 90));
+                oCli.lineWidth = 3
+                oCli.strokeStyle = "red";
+                oCli.stroke()
+                oCli.closePath()
+//shiHen
+                oCli.beginPath()
+                for (var i = 0; i < 60; i++) {
+                    oCli.moveTo(e.clientX, e.clientY);
+                    oCli.arc(e.clientX, e.clientY, 58, 0, 0);
+                }
+                oCli.lineWidth = 4
+                oCli.strokeStyle = "blue";
+                oCli.stroke()
+                oCli.closePath()
+
+                oCli.beginPath()
+                for (var i = 0; i < 60; i++) {
+                    oCli.moveTo(e.clientX, e.clientY);
+                    oCli.arc(e.clientX, e.clientY, 50, 0, 0);
+                }
+                oCli.lineWidth = 5
+                oCli.strokeStyle = "black";
+                oCli.stroke()
+                oCli.closePath()
+            }
+
+
+//        for(
+// var i=0;i<60;i++){
+//            oCli.beginPath()
+//            oCli.moveTo(e.clientX,e.clientY);
+//            oCli.rotate(6*Math.PI/180);
+//            oCli.lineTo(e.clientX+55,e.clientY +55)
+//        }
+
+
+        }
+
+
+</script>
+</body>
+</html>
