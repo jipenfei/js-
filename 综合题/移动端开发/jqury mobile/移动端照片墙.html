@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css">
+    <style>
+        html,body{
+            height: 100%;
+
+        }
+        .ui-grid-c img{
+            width:100%;
+            float: left;
+        }
+
+        .ui-grid-c{
+            display: block;
+        }
+          #title{
+              width: 500px;
+              height: 500px;
+
+              background: black;
+              display: table-cell;
+              vertical-align: middle;
+              text-align: center;
+          }
+        #title span{
+            display: block;
+            width: 50px;
+            height: 50px;
+            background: red;
+            margin: 0 auto;
+
+
+
+        }
+    </style>
+</head>
+<body>
+   <div id="title">
+
+           <span></span>
+
+
+   </div>
+
+
+        <div class="ui-grid-c">
+
+        </div>
+  
+<!--<div class="ui-block-c">-->
+    <!--<div class="ui-block-a">1</div>-->
+    <!--<div class="ui-block-b">2</div>-->
+    <!--<div class="ui-block-c">3</div>-->
+    <!--<div class="ui-block-d"></div>-->
+
+<!--</div>-->
+<script src="jquery-1.12.4.js"></script>
+<script src="jquery.mobile-1.4.5.min.js"></script>
+<script>
+
+    var iU_grid = document.getElementsByClassName("ui-grid-c")[0];
+    var count = 0
+    for(var i=0;i<6;i++){
+        for(var j=0;j<4;j++){
+            count++;
+            var oDiv =  document.createElement("div");
+            var oImg = document.createElement("img");
+            if(j==0){
+                 oDiv.className="ui-block-a"
+            }
+            if(j==1){
+
+                oDiv.className="ui-block-b"
+            }
+            if(j==2){
+
+                oDiv.className="ui-block-c"
+            }
+            if(j==3){
+                oDiv.className="ui-block-d"
+            }
+            oImg.src =   oImg.src="img/thumbs/"+count+".jpg";
+          iU_grid.append(oDiv);
+            oDiv.append(oImg)
+        }
+    }
+    var iD-
+</script>
+</body>
+</html>

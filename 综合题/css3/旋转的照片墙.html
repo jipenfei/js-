@@ -96,6 +96,7 @@
         for(var i=1;i<5;i++) {
             for (var j = 1; j < 7; j++) {
                 var oDiv = document.createElement("div");
+
                 oDiv.className = "img";
                 oDiv.pos = {
                     row: i,
@@ -105,7 +106,7 @@
                 oDiv.index = count;
                 oDiv.innerHTML = "<span></span>"
                 oDiv.onclick = fn;
-                oDiv.style.background = 'url(img/thumbs/' + count + '.jpg'
+                oDiv.style.background = 'url(img/thumbs/' + count + '.jpg';
                 oContent.appendChild(oDiv);
 
             }
