@@ -40,6 +40,7 @@
 <script>
 
     var html = "";
+    var iNow = 0;
     for(var i=0;i<24;i++){
        html += "<img src='img/thumbs/"+(i+1)+".jpg'>";
     }
@@ -47,9 +48,40 @@
     $("img").on("click",function (e) {
         console.log(111);
           var indx = $(this).index();
+          iNow =indx +1;
         $("#container").hide();
         $("#img-box").show().css("background-image","url(img/"+(indx+1)+".jpg)");
-            console.log(1)
+
+      e.preventDefault()
+    })
+    $("#img-box").on("tap",function (e) {
+        $("#img-box").hide();
+        $("#container").show()
+        e.preventDefault();
+    })
+//    $('#img-box').on('swipeleft',function(){
+//        console.log(iNow);
+//        iNow++;
+//        if(iNow == $('.img').length){
+//            iNow = 0;
+//        }
+//        $('#img-box').css('background-image','url(img/'+(iNow)+'.jpg)');
+//    });
+    $("#img-box").on("swipeleft",function(){
+        iNow++;
+        console.log(2)
+        if(iNow == $("img").length+1){
+            iNow = 1
+        }
+
+        $('#img-box').css('background-image','url(img/'+iNow+'.jpg)');
+    })
+    $("#img-box").on("swiperight",function(){
+        iNow--;
+        if(iNow == 0){
+            iNow = $("img").length;
+        }
+        $("#img-box").css("background-image","url(img/"+iNow+".jpg)");
     })
 
 

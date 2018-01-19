@@ -5,63 +5,212 @@
 ul,li{
     list-style-type:none;
 }
+a{
+    text-decoration: none;
+}
 /*harder*/
 #harder{
-    width: 100%;
+   display:-webkit-box;
     height: 100px;
+    margin-top: 3px;
+    box-shadow: 0 -5px 5px 5px rgba(0,0,0,0.1);
 }
-.menu{
-    width: 562px;
-   height: 100px;
-    margin-left: 15px;
-    float: left;
-    display: table;
+#menu{
+    -webkit-box-flex:5;
+    margin-left: 32px;
+}
+#logo{
+    -webkit-box-flex: 2;
+    text-align: center;
+}
+#sing_up{
+    -webkit-box-flex:5;
+    margin-right: 28px;
 
 }
-.menu1{
-    width: 50px;
-   display: table-cell;
-    vertical-align: middle;
-
-}
-.menu1 .little-munu{
-    font-size: 20px;
-    font-weight: 1000;
-}
-.menu span{
-    display: block;
-    margin-left: 20px;
-    font-size: 16px;
-}
-.logo a{
-    display: block;
-    display: table-cell;
-    vertical-align: middle;
-}
-.logo{
-    height: 100px;
-    float: left;
-    margin-left: 55px;
-    display: table;
-}
-.logo img{
+#logo img{
     width: 73px;
-    height: 73;
+    margin-top: 15px;
 }
-.sing_up{
-    width: 562px;
-    height: 100px;
-    float: right;
-    margin-right: 15px;
+#sing_up p{
+    text-align: right;
 }
-.sing_up ul{
-    float: right;
-    display: block;
-    margin-right: 20px;
+#sing_up .user-title{
+    margin-top: 30px    ;
+    font-size: 16px;
+    color: #4e4e4e;
+}
+#sing_up a{
+    font-size: 14px;
+    color: #b89f7a;
+    font-weight: 700;
+}
+#sing_up a:hover{
+    color: ;
+}
+#menu p{
+    width: 30px;
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+#menu p:hover{
+    opacity: 1;
+}
+#menu img{
     margin-top: 30px;
+    letter-spacing: 0.5px1;
+    cursor:pointer;
 }
-.harder_1{
-    overflow: hidden;
-    width: 1300px;
+@media screen and (max-width:991px){
+
+}
+@media screen and (max-width: 768px) {
+    #menu{
+        margin-left: 15px;
+    }
+    #sing_up{
+        margin-right: 12px;
+    }
+    #sing_up .user-title{
+        font-size: 12px;
+    }
+    #sing_up p{
+        font-size: 12px;
+    }
+    #sing_up a{
+        font-size: 12px;
+    }
+}
+
+/*homepage开始*/
+#home-page{
+    position: relative;
+}
+ .img1,.img2{
+     display: block;
+    width: 100%;
+
+}
+ #home-page .img2 {
+     display: none;
+ }
+ .ad{
+     font-size: 12px;
+     background: #47474A;
+     color:rgba(255,255,255,0.7);
+     z-index: 1;
+     padding: 0 5px;
+     position: absolute;
+     top:20px ;
+     right: 15px;
+ }
+.konw-more{
+    font-size: 18px;
+    position: absolute;
+    bottom: 20px;
+    right: 25px;
+    color:#fff;
+    cursor:pointer;
+}
+
+ @media screen and (max-width: 991px){
+    #home-page .img2{
+         display:block;
+     }
+     #home-page .img1{
+         display: none;
+     }
+ }
+/*homepage结束*/
+
+/*home-rewards开始*/
+#home-rewards{
+    width: 100%;
+
+    background:#0f0f0f;
+}
+.container{
+    width: 750px;
     margin: 0 auto;
+    height: 100%;
+    overflow: hidden;
+
 }
+.rewards-mark{
+    width:255px;
+    height: 145px;
+    padding: 75px 0 0 65px;
+    background:#0f0f0f  url("辛巴克的图片/rewards_bg.png") 0 0 no-repeat;
+    background-size: contain;
+    float: left;
+}
+.rewards-mark p{
+    font-size: 18px;
+    color: #fff;
+}
+.rewards-mark img{
+
+    width: 166px;
+}
+.content{
+    width: 430px;
+    float:right;
+    height: 100%;
+
+}
+.content h2{
+    font-size: 25px;
+    color: #fff;
+    margin-top: 40px;
+}
+.content p{
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+.rewards-btn{
+    margin-top: 20px;
+}
+.rewards-btn a{
+    width: 114px;
+    height: 50px;
+    color: #b89f7a;
+    text-align: center;
+    line-height: 50px;
+    display: block;
+    border: 2px solid #b89f7a;
+    float: left;
+    margin-right: 20px;
+}
+.rewards-btn span{
+    width: 114px;
+    height: 50px;
+    display: block;
+    color: #b89f7a;
+    line-height: 50px;
+    float: left;
+}
+@media screen and (max-width: 767px){
+
+    .rewards-mark{
+        width: 100%;
+        padding: 0;
+        float: none;
+    }
+    .rewards-mark p{
+
+    }
+    .rewards-btn{
+        width: 100%;
+
+    }
+    .content{
+        float: none ;
+    }
+    .container{
+        width: 100%;
+    }
+}
+/*home-rewards结束*/
