@@ -127,11 +127,10 @@ a{
 
 /*home-rewards开始*/
 #home-rewards{
-    width: 100%;
-
+    overflow: hidden;
     background:#0f0f0f;
 }
-.container{
+#container{
     width: 750px;
     margin: 0 auto;
     height: 100%;
@@ -172,6 +171,7 @@ a{
 }
 .rewards-btn{
     margin-top: 20px;
+
 }
 .rewards-btn a{
     width: 114px;
@@ -184,6 +184,10 @@ a{
     float: left;
     margin-right: 20px;
 }
+.rewards-btn a:hover{
+    color: white;
+    background: #b89f7a;
+}
 .rewards-btn span{
     width: 114px;
     height: 50px;
@@ -192,25 +196,201 @@ a{
     line-height: 50px;
     float: left;
 }
-@media screen and (max-width: 767px){
 
-    .rewards-mark{
+/*app开始*/
+#app{
+    background: url("辛巴克的图片/app-web.png") 0 0 no-repeat;
+    background-size:contain;
+    padding-top:23% ;
+    position: relative;
+}
+#app img{
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    -webkit-transform:translateY(-50%) translateX(-50%);
+}
+.content-fot{
+    width: 35%;
+    position: absolute;
+    left:58%;
+    top: 50%;
+    margin-top: -50px;
+}
+.content-fot p{
+    font-size: 18px;
+    color: #3d3d3d;
+    line-height: 28px;
+    margin-bottom: 15px;
+}
+.content-fot a{
+    font-size: 18px;
+    color: #b89f7a;
+}
+
+/*app结束*/
+
+/*misaic开始*/
+#mosaic{
+    overflow: hidden;
+}
+.mosaic1{
+     background: url("辛巴克的图片/mosaic1.jpg") 0 0 no-repeat;
+     width: 50%;
+     padding-top: 50%;
+     background-size: cover;
+     float: left;
+     box-sizing: border-box;
+     position: relative;
+ }
+
+.mosaic1-title{
+    text-align: center;
+    font-size: 30px;
+    color: #D81026;
+    margin: 0 15px;
+    width: 100%;
+    position: absolute;
+    top:80%;
+}
+.mosaic1-sell{
+    text-align: center;
+    font-size: 13px;
+    color: black;
+    width: 100%;
+    position: absolute;
+    top:90%;
+}
+.mosaic2{
+    background: url("辛巴克的图片/mosaic2.jpg") 0 0 no-repeat;
+   width: 50%;
+    padding-top: 50%;
+    background-size: cover;
+    float: right;
+    position: relative;
+}
+.mosaic2-title{
+    text-align: center;
+    font-size: 30px;
+    color:#fffffe;
+    width: 100%;
+    position: absolute;
+    top:80%;
+}
+.mosaic2-sell{
+    text-align: center;
+    font-size: 13px;
+    color: #a98e67;
+    width: 100%;
+    position: absolute;
+    top:90%;
+}
+/*misaic结束*/
+
+
+
+@media screen and (max-width: 961px) {
+
+
+}
+@media screen and (max-width: 767px){
+     .rewards-mark,.content{
+         width: 100%;
+         padding: 0;
+     }
+    #container{
         width: 100%;
-        padding: 0;
-        float: none;
+
+    }
+    .rewards-mark{
+       text-align: center;
+        padding-top: 50px;
     }
     .rewards-mark p{
-
+        font-size: 16px;
     }
-    .rewards-btn{
-        width: 100%;
-
+    .rewards-mark img{
+      margin-left: ;
     }
     .content{
-        float: none ;
+        text-align: center;
+        margin-top: -80px;
+
     }
-    .container{
-        width: 100%;
-    }
+   .rewards-btn a{
+       float: none;
+       width: 80%;
+       margin:0 auto 10px;
+   }
+.rewards-btn span{
+    float: right;
 }
+.content h2{
+    margin-bottom: 20px;
+}
+.content p{
+    margin-bottom: 40px;
+}
+    #home-rewards{
+       padding: 0 35px;
+
+    }
+
+    #app{
+        background-image:url("辛巴克的图片/app-mobile.png");
+        background-size:contain;
+        padding-top:98% ;
+        position: relative;
+        padding-left: 15px;
+        padding-right:15px;
+
+    }
+    #app img{
+        display: none;
+    }
+   .content-fot{
+       width: 100%;
+      position: static;
+       text-align: center;
+   }
+   .content-fot p{
+       margin-bottom: 30px;
+   }
+   .btn{
+       display: block;
+       background: url("辛巴克的图片/udp-starbucks-cn.svg") center center no-repeat;
+       width: 220px;
+       height: 80px;
+       margin: auto;
+       margin-top: 10px;
+   }
+
+
+   .mosaic1{
+       width: 100%;
+       padding-top: 100%;
+       box-sizing: border-box;
+       float: none;
+
+
+   }
+   .mosaic1 p{
+       -webkit-box-sizing:border-box;
+       padding: 0 15px;
+   }
+    .mosaic2{
+        width: 100%;
+        padding-top: 100%;
+        box-sizing: border-box;
+        float: none;
+    }
+    .mosaic2 p{
+        -webkit-box-sizing:border-box;
+        padding: 0 15px;
+    }
+
+
+    }
 /*home-rewards结束*/
