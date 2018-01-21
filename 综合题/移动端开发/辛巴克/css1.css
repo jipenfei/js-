@@ -290,6 +290,34 @@ a{
 /*misaic结束*/
 
 
+/*collectiong开始*/
+#collection{
+    padding: 75px 18px;
+}
+#collection h2{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 400;
+    color: #2F2F2F;
+}
+#collection p{
+    font-size: 18px;
+    color: #8B8B8B;
+    text-align: center;
+
+}
+.prolist{
+    display: flex;
+    -webkit-justify-content: center;
+    -webkit-flex-wrap: wrap;
+}
+.prolist li{
+    width: 240px;
+    height: 280px;
+    background: #ccc;
+    margin: 15px;
+    }
+/*collection结束*/
 
 @media screen and (max-width: 961px) {
 
