@@ -311,7 +311,7 @@ a{
     -webkit-justify-content: center;
     -webkit-flex-wrap: wrap;
 }
-.prolist li{
+ .prolist li{
     width: 240px;
     height: 280px;
     background: #ccc;
