@@ -2,114 +2,99 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title></title>
     <style>
         *{
             margin: 0;
             padding: 0;
         }
-        body{
-            background: #000000;
-        }
-        #ss{
-            background: #ffffff;
-        }
     </style>
 </head>
 <body>
-<!--<canvar id="write" width="500" height="500"></canvar>-->
-<canvas id="ss" width="500" height="500"></canvas>
+<canvas id="cvs" width="600" height="600"></canvas>
+
 <script>
-    var oWit = document.querySelector("#ss");
-    var oCli = oWit.getContext("2d");
+    var oCvs = document.getElementById('cvs');
+    var oCtx = oCvs.getContext('2d');
+
+    oCtx.beginPath();
+    for(var i=0; i<60; i++){
+        oCtx.moveTo(300,300);
+        oCtx.arc(300,300,100,i*6*Math.PI/180,(i+1)*6*Math.PI/180);
+    }
+    oCtx.stroke();
+    oCtx.closePath();
+
+    //盖 第一个圆
+    oCtx.beginPath();
+    oCtx.arc(300,300,95,0*Math.PI,2*Math.PI);
+    oCtx.fillStyle = "#fff";
+    oCtx.fill();
+    oCtx.closePath();
+
+    //画时针刻度
+    oCtx.beginPath();
+    for(var j=0; j<12; j++){
+        oCtx.moveTo(300,300);
+        oCtx.arc(300,300,100,j*30*Math.PI/180,j*30*Math.PI/180);
+    }
+    oCtx.stroke();
+    oCtx.closePath();
+
+    //盖 第二个圆
+    oCtx.beginPath();
+    oCtx.arc(300,300,90,0*Math.PI,2*Math.PI);
+    oCtx.fillStyle = "#fff";
+    oCtx.fill();
+    oCtx.closePath();
+
+
+    run();
+
+    setInterval(function(){
+        run();
+    },1000)
+    function run(){
+        oCtx.clearRect(245,245,110,110);
+        //获取当前时间
+
+        var oDate = new Date;
+        var iSeconds = oDate.getSeconds();
+        var iMinutes = oDate.getMinutes() + iSeconds/60;
+        var iHours = oDate.getHours() + iMinutes/60;
+
+        //画秒针
+        oCtx.beginPath();
+        oCtx.moveTo(300,300);
+        oCtx.arc(300,300,55,(iSeconds*6-90)*Math.PI/180,(iSeconds*6-90)*Math.PI/180);
+        oCtx.lineWidth = 2;
+        oCtx.strokeStyle = "#f00";
+        oCtx.stroke();
+        oCtx.closePath();
+        //画分针
+        oCtx.beginPath();
+        oCtx.moveTo(300,300);
+        oCtx.arc(300,300,45,(iMinutes*6-90)*Math.PI/180,(iMinutes*6-90)*Math.PI/180);
+        oCtx.lineWidth = 4;
+        oCtx.strokeStyle = "#0f0";
+        oCtx.stroke();
+        oCtx.closePath();
+        //画时针
+        oCtx.beginPath();
+        oCtx.moveTo(300,300);
+        oCtx.arc(300,300,35,(iHours*30-90)*Math.PI/180,(iHours*30-90)*Math.PI/180);
+        oCtx.lineWidth = 6;
+        oCtx.strokeStyle = "#000";
+        oCtx.stroke();
+        oCtx.closePath();
+    }
 
 
 
-        oWit.onclick = function (e) {
-            oCli.beginPath()
-            oCli.arc(e.clientX, e.clientY, 80, 0, Math.PI * 2);
-            oCli.stroke()
-            oCli.closePath()
 
-            oCli.beginPath()
-            for (var i = 0; i < 60; i++) {
-                oCli.moveTo(e.clientX, e.clientY);
-                oCli.arc(e.clientX, e.clientY, 80, i * Math.PI * 2 / 60, Math.PI * 2 / 180);
-            }
-            oCli.stroke()
-            oCli.closePath()
-
-
-            oCli.beginPath()
-            oCli.arc(e.clientX, e.clientY, 75, 0, Math.PI * 2);
-            oCli.fillStyle = "white";
-            oCli.fill();
-            oCli.closePath()
-
-            oCli.beginPath()
-            for (var i = 0; i < 60; i++) {
-                oCli.moveTo(e.clientX, e.clientY);
-                oCli.arc(e.clientX, e.clientY, 80, i * Math.PI * 2 / 12, Math.PI * 2 / 180);
-            }
-            oCli.stroke()
-            oCli.closePath()
-
-            oCli.beginPath()
-            oCli.arc(e.clientX, e.clientY, 70, 0, Math.PI * 2);
-            oCli.fillStyle = "white";
-            oCli.fill();
-            oCli.closePath();
-
-            var date = new Date();
-            var iSencond = date.getSeconds();
-            var iMinute = date.getMinutes() + iSencond / 60;
-            var iHouse = date.getHours() + iMinute / 60;
-//        fen针
-            run()
-
-            function run() {
-                oCli.beginPath()
-                oCli.moveTo(e.clientX, e.clientY);
-                oCli.arc(e.clientX, e.clientY, 65, -(iSencond * 6)-90, -((iSencond * 6) - 90));
-                oCli.lineWidth = 3
-                oCli.strokeStyle = "red";
-                oCli.stroke()
-                oCli.closePath()
-//shiHen
-                oCli.beginPath()
-                for (var i = 0; i < 60; i++) {
-                    oCli.moveTo(e.clientX, e.clientY);
-                    oCli.arc(e.clientX, e.clientY, 58, 0, 0);
-                }
-                oCli.lineWidth = 4
-                oCli.strokeStyle = "blue";
-                oCli.stroke()
-                oCli.closePath()
-
-                oCli.beginPath()
-                for (var i = 0; i < 60; i++) {
-                    oCli.moveTo(e.clientX, e.clientY);
-                    oCli.arc(e.clientX, e.clientY, 50, 0, 0);
-                }
-                oCli.lineWidth = 5
-                oCli.strokeStyle = "black";
-                oCli.stroke()
-                oCli.closePath()
-            }
-
-
-//        for(
-// var i=0;i<60;i++){
-//            oCli.beginPath()
-//            oCli.moveTo(e.clientX,e.clientY);
-//            oCli.rotate(6*Math.PI/180);
-//            oCli.lineTo(e.clientX+55,e.clientY +55)
-//        }
-
-
-        }
 
 
 </script>
+
 </body>
 </html>
